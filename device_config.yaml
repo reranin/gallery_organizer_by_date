@@ -1,0 +1,209 @@
+# تنظیمات دستگاه‌های مختلف برای سازماندهی عکس‌ها
+# هر دستگاه می‌تواند شامل دوربین، موبایل یا هر دستگاه دیگری باشد
+
+devices:
+  # دوربین‌های حرفه‌ای
+  canon_5d:
+    name: "Canon 5D Mark IV"
+    type: "dslr"
+    manufacturer: "Canon"
+    models: 
+      - "Canon EOS 5D Mark IV"
+      - "Canon EOS 5D"
+    raw_extensions: [".cr2", ".cr3", ".crw"]
+    folder_prefix: "Canon_5D"
+    priority: 1
+    
+  nikon_d850:
+    name: "Nikon D850"
+    type: "dslr"
+    manufacturer: "NIKON CORPORATION"
+    models:
+      - "NIKON D850"
+      - "NIKON D800"
+    raw_extensions: [".nef", ".nrw"]
+    folder_prefix: "Nikon_D850"
+    priority: 1
+    
+  sony_a7:
+    name: "Sony Alpha 7"
+    type: "mirrorless"
+    manufacturer: "SONY"
+    models:
+      - "ILCE-7M3"
+      - "ILCE-7M4"
+      - "ILCE-7R"
+    raw_extensions: [".arw", ".srf", ".sr2"]
+    folder_prefix: "Sony_A7"
+    priority: 1
+
+  # موبایل‌ها
+  iphone:
+    name: "iPhone"
+    type: "mobile"
+    manufacturer: "Apple"
+    models:
+      - "iPhone 14 Pro"
+      - "iPhone 13 Pro"
+      - "iPhone 12 Pro"
+      - "iPhone 11 Pro"
+    software_patterns:
+      - "iPhone"
+      - "iOS"
+    raw_extensions: [".dng", ".heic", ".heif"]
+    folder_prefix: "iPhone"
+    priority: 2
+    
+  samsung:
+    name: "Samsung Galaxy"
+    type: "mobile"
+    manufacturer: "samsung"
+    models:
+      - "SM-S918B"  # S23 Ultra
+      - "SM-S908B"  # S22 Ultra
+      - "SM-G998B"  # S21 Ultra
+    software_patterns:
+      - "Samsung"
+      - "Galaxy"
+    raw_extensions: [".dng"]
+    folder_prefix: "Samsung"
+    priority: 2
+    
+  xiaomi:
+    name: "Xiaomi"
+    type: "mobile"
+    manufacturer: "Xiaomi"
+    models:
+      - "2211133C"  # Xiaomi 13 Pro
+      - "2201123G"  # Xiaomi 12 Pro
+      - "M2102K1G"  # Mi 11 Ultra
+    software_patterns:
+      - "Xiaomi"
+      - "MIUI"
+      - "Redmi"
+    raw_extensions: [".dng"]
+    folder_prefix: "Xiaomi"
+    priority: 2
+
+  # دوربین‌های اکشن
+  gopro:
+    name: "GoPro"
+    type: "action"
+    manufacturer: "GoPro"
+    models:
+      - "HERO11 Black"
+      - "HERO10 Black"
+      - "HERO9 Black"
+    software_patterns:
+      - "GoPro"
+      - "HERO"
+    raw_extensions: [".gpr"]
+    folder_prefix: "GoPro"
+    priority: 3
+    
+  dji:
+    name: "DJI"
+    type: "drone"
+    manufacturer: "DJI"
+    models:
+      - "FC3411"  # DJI Mini 3 Pro
+      - "FC3170"  # Mavic Air 2
+      - "FC220"   # Mavic Pro
+    software_patterns:
+      - "DJI"
+      - "Mavic"
+      - "Phantom"
+    raw_extensions: [".dng"]
+    folder_prefix: "DJI_Drone"
+    priority: 3
+
+# تنظیمات سازماندهی
+organization:
+  # ساختار فولدر
+  folder_structure: "YYYY/YYYY-MM-DD/Device"  # سال/تاریخ/دستگاه
+  
+  # حداکثر تعداد فایل در هر فولدر
+  max_files_per_folder: 500
+  
+  # ادغام رویدادهای یک روز
+  merge_daily_events: true
+  
+  # ایجاد فولدر جداگانه برای RAW
+  separate_raw_folder: true
+  
+  # نامگذاری فایل‌ها
+  file_naming:
+    pattern: "{device}_{date}_{time}_{original}"
+    duplicate_suffix: "_{count}"
+    
+  # فولدرهای خاص
+  special_folders:
+    screenshots: "Screenshots"
+    social_media: "Social_Media"
+    unsorted: "Unsorted"
+    duplicates: "Duplicates"
+    raw: "RAW"
+    edited: "Edited"
+
+# فرمت‌های پشتیبانی شده
+supported_formats:
+  images:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".tif"
+    - ".tiff"
+    - ".bmp"
+    - ".gif"
+    - ".webp"
+    - ".heic"
+    - ".heif"
+    
+  videos:
+    - ".mp4"
+    - ".mov"
+    - ".avi"
+    - ".mkv"
+    - ".wmv"
+    - ".flv"
+    - ".m4v"
+    - ".3gp"
+    - ".webm"
+    - ".mts"
+    - ".m2ts"
+    
+  raw:
+    - ".cr2"  # Canon
+    - ".cr3"  # Canon
+    - ".nef"  # Nikon
+    - ".arw"  # Sony
+    - ".dng"  # Adobe/Android
+    - ".orf"  # Olympus
+    - ".rw2"  # Panasonic
+    - ".raf"  # Fujifilm
+    - ".gpr"  # GoPro
+    - ".3fr"  # Hasselblad
+    - ".srw"  # Samsung
+
+# تنظیمات پردازش
+processing:
+  # استفاده از متادیتا
+  use_metadata: true
+  
+  # استفاده از نام فایل برای تاریخ
+  use_filename_date: true
+  
+  # الگوهای تاریخ در نام فایل
+  date_patterns:
+    - "IMG_%Y%m%d_%H%M%S"
+    - "VID_%Y%m%d_%H%M%S"
+    - "%Y-%m-%d_%H-%M-%S"
+    - "%Y%m%d_%H%M%S"
+    - "Screenshot_%Y-%m-%d"
+    
+  # حداقل سایز فایل معتبر (بایت)
+  min_file_size: 1024
+  
+  # پردازش موازی
+  parallel_processing: true
+  max_workers: 4
