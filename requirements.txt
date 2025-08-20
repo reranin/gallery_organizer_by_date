@@ -1,0 +1,11 @@
+# وابستگی‌های مورد نیاز برای اسکریپت سازماندهی فایل‌ها
+# این اسکریپت فقط از کتابخانه‌های استاندارد پایتون استفاده می‌کند
+# نیازی به نصب کتابخانه اضافی نیست
+
+# Python 3.7+ required
+# ExifTool must be installed separately:
+# - macOS: brew install exiftool
+# - Windows: Download from https://exiftool.org
+# - Linux: sudo apt-get install exiftool 
+
+hachoir>=4.0.0 
