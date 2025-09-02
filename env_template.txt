@@ -1,0 +1,95 @@
+# ================================================
+# تنظیمات ابزارهای مدیریت فایل
+# ================================================
+
+# =============== مسیرهای کلی ===============
+# پوشه ورودی اصلی
+INPUT_DIRECTORY=/path/to/input/directory
+
+# پوشه خروجی اصلی  
+OUTPUT_DIRECTORY=/path/to/output/directory
+
+# =============== تنظیمات جمع‌آوری اسکرین‌شات ===============
+# پوشه منبع برای جستجوی اسکرین‌شات‌ها
+SCREENSHOT_SOURCE_DIR=/path/to/screenshots/source
+
+# پوشه مقصد برای اسکرین‌شات‌ها
+SCREENSHOT_DEST_DIR=/path/to/screenshots/destination
+
+# الگوهای نام اسکرین‌شات (جدا شده با کاما)
+SCREENSHOT_NAME_PATTERNS=Screenshot,Snip,Snipping,Screen Shot,ScreenShot,اسکرین
+
+# پسوندهای تصویری مجاز
+IMAGE_EXTENSIONS=png,jpg,jpeg,bmp,webp,gif,tiff,heic,dng,raw,svg,ico
+
+# =============== تنظیمات شناسایی خرابی ===============
+# پسوندهای ویدیویی مجاز
+VIDEO_EXTENSIONS=mp4,avi,mkv,mov,wmv,flv,webm,mpeg,mpg,ts,m4v,3gp
+
+# حداکثر اندازه فایل برای بررسی (مگابایت)
+MAX_FILE_SIZE_MB=10000
+
+# حداقل اندازه فایل (بایت)
+MIN_FILE_SIZE_BYTES=100
+
+# تعداد Thread ها برای پردازش
+THREAD_COUNT=8
+
+# زمان انتظار برای هر فایل (ثانیه)
+TIMEOUT_SECONDS=30
+
+# اندازه دسته برای پردازش
+BATCH_SIZE=1000
+
+# =============== تنظیمات سازماندهی ===============
+# نوع سازماندهی پیش‌فرض (date, type, camera, size, resolution)
+DEFAULT_ORGANIZATION_TYPE=type
+
+# فرمت تاریخ برای سازماندهی
+DATE_FORMAT=%Y/%m
+
+# =============== تنظیمات تعمیر ===============
+# پوشه خروجی برای فایل‌های تعمیر شده
+REPAIR_OUTPUT_DIR=/path/to/repaired/files
+
+# روش‌های تعمیر پیش‌فرض (جدا شده با کاما)
+DEFAULT_REPAIR_METHODS=auto
+
+# =============== تنظیمات پشتیبان‌گیری ===============
+# پوشه ریشه پشتیبان‌گیری‌ها
+BACKUP_ROOT_DIR=/path/to/backups
+
+# فشرده‌سازی پیش‌فرض (true/false)
+DEFAULT_COMPRESSION=true
+
+# تعداد پشتیبان‌گیری‌های نگهداری
+KEEP_BACKUP_COUNT=5
+
+# =============== تنظیمات گزارش‌دهی ===============
+# ذخیره گزارش تفصیلی (true/false)
+SAVE_DETAILED_REPORT=true
+
+# ذخیره گزارش JSON (true/false)
+SAVE_JSON_REPORT=true
+
+# سطح لاگ (DEBUG, INFO, WARNING, ERROR)
+LOG_LEVEL=INFO
+
+# =============== تنظیمات انتقال فایل‌های خراب ===============
+# انتقال فایل‌های خراب (true/false)
+MOVE_CORRUPTED_FILES=true
+
+# پوشه فایل‌های خراب
+CORRUPTED_FILES_FOLDER=corrupted_files
+
+# ایجاد پوشه‌های فرعی (true/false)
+CREATE_SUBFOLDERS=true
+
+# ایجاد پشتیبان‌گیری (true/false)
+CREATE_BACKUP=true
+
+# ذخیره تدریجی نتایج (true/false)
+ENABLE_INCREMENTAL_SAVE=true
+
+# فاصله ذخیره پیشرفت (تعداد فایل)
+SAVE_PROGRESS_INTERVAL=100
